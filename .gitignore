@@ -1,0 +1,12 @@
+# Python virtual environment
+venv/
+
+# Raw COCO dataset
+data/raw/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
