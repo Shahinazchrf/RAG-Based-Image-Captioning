@@ -69,4 +69,39 @@ The final verification confirmed:
 - No images without captions.
 - No overlapping image IDs between splits.
 
-An additional exact-file duplicate check found **zero duplicate groups** among the 10,200 selected processed images. This check does not rule out visually similar
+An additional exact-file duplicate check found **zero duplicate groups** among the 10,200 selected processed images. This check does not rule out visually similar images or semantic duplicates.
+## 6. Final Dataset State After Test Expansion
+
+The original test split contained 100 images. It was expanded by adding 900 additional images from the official COCO Val2017 dataset, resulting in 1,000 test images.
+
+The original 100-image metadata and captions files were backed up before expansion.
+
+### Final Split Statistics
+
+| Split | Images | Captions |
+|---|---:|---:|
+| Knowledge Base | 10,000 | 50,028 |
+| Validation | 100 | 500 |
+| Test | 1,000 | 5,002 |
+| **Total** | **11,100** | **55,530** |
+
+### Data Leakage Verification
+
+The three splits were checked using image IDs.
+
+- Knowledge Base vs Validation: 0 overlapping images.
+- Knowledge Base vs Test: 0 overlapping images.
+- Validation vs Test: 0 overlapping images.
+
+**Result:** No image ID overlap was detected between the three splits.
+
+### Test Split Integrity
+
+- Total test images: 1,000.
+- Unique image IDs: 1,000.
+- Total captions: 5,002.
+- Images without captions: 0.
+- Captions linked to unknown images: 0.
+- Duplicate annotation IDs: 0.
+
+The final dataset contains 10,000 Knowledge Base images, 100 Validation images, and 1,000 Test images.
